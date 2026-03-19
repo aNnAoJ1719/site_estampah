@@ -11,218 +11,175 @@
   --bege:#F2E1D1;
 }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
+body{background:#F2E1D1;color:#1F1F1F;}
+
+header{background:#1F1F1F;display:flex;justify-content:space-between;align-items:center;padding:15px 10%;}
+.logo{display:flex;align-items:center;gap:10px;}
+.logo img{height:40px;}
+nav a{color:#F2685B;text-decoration:none;margin-left:25px;font-weight:bold;}
+nav a:hover{color:white;}
+
+.sobre{
+padding:40px 10%;
 }
 
-body{
-background:#F2E1D1;
-color:#1F1F1F;
-}
-
-/* HEADER */
-header{
-background:#1F1F1F;
+.sobre-container{
 display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 10%;
+align-items:stretch;
+gap:40px;
+flex-wrap:wrap;
 }
 
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
+.sobre-text{
+flex:1;
+min-width:280px;
 }
 
-.logo img{
-height:40px;
+.sobre-text h2{
+font-size:32px;
+margin-bottom:20px;
 }
 
-nav a{
-color:#F2685B;
-text-decoration:none;
-margin-left:25px;
-font-weight:bold;
+.sobre-text p{
+font-size:18px;
+line-height:1.6;
 }
 
-nav a:hover{
-color:white;
+.sobre-img{
+flex:1;
+width:80px;
 }
+
+
+.destaque{color:#F2685B;font-weight:bold;}
+.sobre h2{font-size:32px;margin-bottom:20px;}
+.sobre p{font-size:18px;line-height:1.6;}
+.destaque{color:#F2685B;font-weight:bold;}
 
 /* PRODUTOS */
-.produtos{
-padding:60px 10%;
-
-text-align:center;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-
-.produto{
-background:white;
-border-radius:10px;
-padding:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-.produto img{
-width:100%;
-border-radius:8px;
-}
-
-.produto button{
-margin-top:10px;
-background:#F2685B;
-color:white;
-border:none;
-padding:10px;
-cursor:pointer;
-border-radius:5px;
-width:100%;
-}
+.produtos{padding:60px 10%;text-align:center;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
+.produto{background:white;border-radius:10px;padding:15px;box-shadow:0 5px 15px rgba(0,0,0,0.1);}
+.produto img{width:100%;border-radius:8px;}
+.produto button{margin-top:10px;background:#F2685B;color:white;border:none;padding:10px;cursor:pointer;border-radius:5px;width:100%;}
 
 /* CARRINHO */
-.carrinho{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#1F1F1F;
-color:white;
-padding:15px;
-border-radius:10px;
-width:260px;
-box-shadow:0 5px 20px rgba(0,0,0,0.3);
-}
+.carrinho{position:fixed;right:20px;bottom:20px;background:#1F1F1F;color:white;padding:15px;border-radius:10px;width:280px;box-shadow:0 5px 20px rgba(0,0,0,0.3);}
+.carrinho h3{text-align:center;margin-bottom:10px;}
+.carrinho ul{list-style:none;max-height:120px;overflow:auto;margin-bottom:10px;}
+.carrinho li{margin-bottom:5px;font-size:13px;}
+.total{font-weight:bold;margin-bottom:10px;}
+.carrinho select,.carrinho input{width:100%;margin-bottom:8px;padding:8px;border-radius:5px;border:none;}
+.carrinho button{width:100%;background:#F2685B;border:none;color:white;padding:10px;cursor:pointer;border-radius:5px;}
 
-.carrinho h3{
-text-align:center;
-margin-bottom:10px;
-}
-
-.carrinho ul{
-list-style:none;
-max-height:150px;
-overflow:auto;
-margin-bottom:10px;
-}
-
-.carrinho li{
-margin-bottom:5px;
-font-size:14px;
-}
-
-.total{
-font-weight:bold;
-margin-bottom:10px;
-}
-
-.carrinho button{
-width:100%;
-background:#F2685B;
-border:none;
-color:white;
-padding:10px;
-cursor:pointer;
-border-radius:5px;
-}
-
-/* FOOTER */
-footer{
-margin-top:40px;
-background:#1F1F1F;
-color:white;
-text-align:center;
-padding:20px;
-}
-
+footer{margin-top:40px;background:#1F1F1F;color:white;text-align:center;padding:20px;}
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="logo"> 
-<img src="logo.png">
-</div>
-
+<div class="logo"><img src="logo.png"></div>
 <nav>
-<a href="#">Home</a>
+<a href="#sobre">Sobre</a>
 <a href="#produtos">Produtos</a>
 </nav>
 </header>
 
-<section id="produtos" class="produtos">
+<section id="sobre" class="sobre">
 
-<h2>Produtos</h2>
+<div class="sobre-container">
 
-<div class="grid">
-
-<div class="produto">
-<img src="01.jpg">
-<h3>Camiseta Estampada</h3>
-<p>R$59,90</p>
-<button onclick="addCarrinho('Camiseta Estampada')">Adicionar</button>
+<div class="sobre-text">
+<h2>Mais que roupas, <span class="destaque">identidade</span>.</h2>
+<p>
+Na <span class="destaque">Estampah!</span>, cada peça é criada para quem quer se destacar.
+Misturamos <b>estilo</b>, criatividade e personalidade em produtos únicos.
+<br><br>
+Aqui você não compra apenas uma camiseta ou moletom — <span class="destaque">você veste uma ideia.</span>
+Escolha seu modelo, personalize do seu jeito e leve algo que realmente represente você.
+<br><br>
+<b>Exclusividade, atitude e autenticidade em cada detalhe.</b>
+<b><span class="destaque">Feito sob medida!</span></b>
+</p>
 </div>
 
-<div class="produto">
-<img src="02.jpg">
-<h3>Camiseta Minimal</h3>
-<p>R$69,90</p>
-<button onclick="addCarrinho('Camiseta Minimal')">Adicionar</button>
-</div>
-
-<div class="produto">
-<img src="03.jpg">
-<h3>Moletom Street</h3>
-<p>R$119,90</p>
-<button onclick="addCarrinho('Moletom Street')">Adicionar</button>
-</div>
-
-<div class="produto">
-<img src="04.jpg">
-<h3>Moletom Urban</h3>
-<p>R$129,90</p>
-<button onclick="addCarrinho('Moletom Urban')">Adicionar</button>
+<div class="sobre-img">
+<img src="05.png" alt="Camisetas">
 </div>
 
 </div>
 
 </section>
 
-<!-- CARRINHO -->
-<div class="carrinho">
+<section id="produtos" class="produtos">
+<h2>Produtos</h2>
+<div class="grid">
 
-<h3>🛒 Carrinho</h3>
-
-<ul id="listaCarrinho"></ul>
-
-<p class="total">Total: R$ <span id="total">0.00</span></p>
-
-<button onclick="finalizarPedido()">Finalizar Pedido</button>
-
+<div class="produto">
+<img src="01.jpg">
+<h3>Camiseta Algodão</h3>
+<p>R$59,90</p>
+<button onclick="addCarrinho('Camiseta Algodão')">Adicionar</button>
 </div>
 
-<footer>
-<p>© 2026 Estampah!</p>
-</footer>
+<div class="produto">
+<img src="02.jpg">
+<h3>Camiseta Dry Fit</h3>
+<p>R$69,90</p>
+<button onclick="addCarrinho('Camiseta Dry Fit')">Adicionar</button>
+</div>
+
+<div class="produto">
+<img src="03.jpg">
+<h3>Moletom Basic</h3>
+<p>R$119,90</p>
+<button onclick="addCarrinho('Moletom Basic')">Adicionar</button>
+</div>
+
+<div class="produto">
+<img src="04.jpg">
+<h3>Moletom Canguru</h3>
+<p>R$129,90</p>
+<button onclick="addCarrinho('Moletom Canguru')">Adicionar</button>
+</div>
+
+</div>
+</section>
+
+<div class="carrinho">
+<h3>🛒 Carrinho</h3>
+<ul id="listaCarrinho"></ul>
+
+<select id="tamanho">
+<option value="">Tamanho</option>
+<option>P</option><option>M</option><option>G</option><option>GG</option>
+</select>
+
+<select id="cor">
+<option value="">Cor</option>
+<option>Preta</option><option>Branca</option><option>Azul</option>
+<option>Verde</option><option>Vermelha</option><option>Cinza</option>
+</select>
+
+<input type="text" id="nome" placeholder="Seu nome">
+<input type="text" id="cep" placeholder="Seu CEP">
+
+<p class="total">Total: R$ <span id="total">0.00</span></p>
+<button onclick="finalizarPedido()">Finalizar Pedido</button>
+</div>
+
+<footer><p>© 2026 Estampah!</p></footer>
 
 <script>
-
 let carrinho = []
 
 const precos = {
-"Camiseta Estampada": 59.9,
-"Camiseta Minimal": 69.9,
-"Moletom Street": 119.9,
-"Moletom Urban": 129.9
+"Camiseta Algodão":59.9,
+"Camiseta Dry Fit":69.9,
+"Moletom Basic":119.9,
+"Moletom Canguru":129.9
 }
 
 function addCarrinho(produto){
@@ -231,74 +188,64 @@ renderCarrinho()
 }
 
 function renderCarrinho(){
+let lista=document.getElementById("listaCarrinho")
+let totalEl=document.getElementById("total")
+lista.innerHTML=""
+let resumo={}
+let total=0
 
-let lista = document.getElementById("listaCarrinho")
-let totalEl = document.getElementById("total")
-
-lista.innerHTML = ""
-
-let resumo = {}
-let total = 0
-
-carrinho.forEach(item => {
-resumo[item] = (resumo[item] || 0) + 1
-})
+carrinho.forEach(item=>{resumo[item]=(resumo[item]||0)+1})
 
 for(let produto in resumo){
-let li = document.createElement("li")
-li.textContent = `${resumo[produto]}x ${produto}`
+let li=document.createElement("li")
+li.textContent=`${resumo[produto]}x ${produto}`
 lista.appendChild(li)
 
-total += resumo[produto] * precos[produto]
+total+=resumo[produto]*precos[produto]
 }
 
-totalEl.textContent = total.toFixed(2)
-
+totalEl.textContent=total.toFixed(2)
 }
 
 function finalizarPedido(){
+if(carrinho.length===0){alert("Carrinho vazio");return}
 
-if(carrinho.length === 0){
-alert("Carrinho vazio")
-return
+let tamanho=document.getElementById("tamanho").value
+let cor=document.getElementById("cor").value
+let nome=document.getElementById("nome").value
+let cep=document.getElementById("cep").value
+
+if(!tamanho||!cor||!nome||!cep){
+alert("Preencha todos os campos");return
 }
 
-// 🔥 COLOQUE SEU NÚMERO
-const numero = "5511953724603"
+const numero="5511953724603"
 
-let resumo = {}
-let total = 0
+let resumo={}
+let total=0
+carrinho.forEach(item=>{resumo[item]=(resumo[item]||0)+1})
 
-carrinho.forEach(item => {
-resumo[item] = (resumo[item] || 0) + 1
-})
+for(let produto in resumo){total+=resumo[produto]*precos[produto]}
+
+let mensagem="🛍️ *Novo Pedido - Estampah!*%0A%0A"
+mensagem+="📦 *Produtos:*%0A"
 
 for(let produto in resumo){
-total += resumo[produto] * precos[produto]
+mensagem+=`${resumo[produto]}x ${produto}%0A`
 }
 
-let mensagem = "🛍️ *Novo Pedido - Estampah!*%0A%0A"
+mensagem+=`%0A📏 Tamanho: ${tamanho}%0A`
+mensagem+=`🎨 Cor: ${cor}%0A`
+mensagem+=`👤 Nome: ${nome}%0A`
+mensagem+=`📍 CEP: ${cep}%0A`
+mensagem+=`%0A💰 Total: R$ ${total.toFixed(2)}%0A`
 
-mensagem += "📦 *Produtos:*%0A"
+let url=`https://wa.me/${numero}?text=${mensagem}`
+window.open(url,"_blank")
 
-for(let produto in resumo){
-mensagem += `${resumo[produto]}x ${produto}%0A`
-}
-
-mensagem += `%0A💰 *Total:* R$ ${total.toFixed(2)}%0A`
-mensagem += "🚚 Frete: a calcular%0A%0A"
-mensagem += "👤 Nome:%0A📍 CEP:%0A%0A"
-mensagem += "Quero finalizar meu pedido!"
-
-let url = `https://wa.me/${numero}?text=${mensagem}`
-
-window.open(url, "_blank")
-
-carrinho = []
+carrinho=[]
 renderCarrinho()
-
 }
-
 </script>
 
 </body>
